@@ -60,7 +60,7 @@ countries.forEach(e => {
     e.addEventListener('click', function () {
         let country = document.querySelector('.footer_first .footer_nav ul .active')
         let show = document.querySelector('.footer_contacts ul.show_me')
-        if (show != null && show != "") {
+        if (show != null) {
             show.classList.remove('show_me')
         }
         country.classList.remove('active')
@@ -71,14 +71,33 @@ countries.forEach(e => {
 
 })
 
-//problem
-let spanEm = $('.achievements_three article h3 span em')
+//problem solved
 
-one();
+jQuery(document).ready(function($) {
+    $('.achievements_three article h3 span em').counterUp({
+      delay: 10,
+      time: 1000,
+      triggerOnce:true
+    });
+  });
 
-function one() {
-    spanEm.counterUp({ delay: 10 });
-}
+
+// end
+
+// let success=false;
+// let spanEm = $('.achievements_three article h3 span em')
+
+//     if(!success){
+//         one()
+//     }
+
+
+
+// function one() {
+//     spanEm.counterUp({ delay: 10 });
+//     success=true
+//     console.log('ok')
+// }
 
 let i=0;
 let sections = document.querySelectorAll('.section')
